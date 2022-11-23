@@ -5,21 +5,21 @@ The Singleton Pattern is a software design pattern that restricts the instantiat
 The main reason for this is that repeatedly creating these objects, uses up system resources.
 
 ```kotlin
-class singleTonExample {
-	@Volatile
-	private var INSTANCE: singleTonExample? = null
+companion object{
 
-	fun getInstance(): singleTonExample? {
-		if (INSTANCE == null) {
-			synchronized(this) {
-				if (INSTANCE == null) {
-					INSTANCE = singleTonExample()
-				}
-			}
-		}
-		return INSTANCE
-	}
-}
+        @Volatile
+        private lateinit var instance : Bitscuit
+
+         fun getInstance(context: Context): Bitscuit {
+             synchronized(this) {
+                 if (!::instance.isInitialized) {
+                     instance = Bitscuit(context.applicationContext)
+                 }
+
+             }
+             return instance
+            }
+     }
 
 ```
 
