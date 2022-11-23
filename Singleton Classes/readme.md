@@ -23,7 +23,7 @@ class singleTonExample {
 
 ```
 
-## synchronized(Lock<Any>){}
+## synchronized(Lock '\<Any>'){}
   The synchronized(){} method belongs to the category of multithreading concepts. It is used to stop threads from simultaneously accessing in any way the code that this method encapsulates.
 
 It takes one parameter which is by convention named LOCK and of type Any() in kotlin.
